@@ -3,7 +3,7 @@ var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 100;
 const colorArray = ['#ffffff','#0cce6b', '#dced31', '#ef2d56', '#ed7d3A', '#7d3Aed', '#ccc'];
 // const colorArray = ['white','green', 'red', 'blue', 'orange', 'yellow', 'grey'];
-
+let score =0;
 let columns = 10;
 let gameGrid = new Array();
 let rows = Math.floor(h / (w / columns));
@@ -170,6 +170,7 @@ function findTargets(target) {
 				tarcolor = element.color;
 				targets.splice(index, 1);
 	  			gameGrid[tarX][tarY].color = 0;
+	  			score++;
 	  			if (tarX < columns - 1 && gameGrid[tarX + 1][tarY].color == tarcolor && tarcolor != 0) {
 	  				targets.push(gameGrid[tarX + 1][tarY]);
 	  			}
@@ -191,6 +192,7 @@ function findTargets(target) {
 function draw() {
 	// circles();
 	// lines();
+	updateScore();
 	checkDiggerDeath();
 	drawblocks();
 	drawDigger();
@@ -199,4 +201,10 @@ function draw() {
 	let bottomColor = digger.y + 1 < rows ? gameGrid[digger.x][digger.y + 1].color : 0;
 	let leftColor = digger.x > 0 ? gameGrid[digger.x - 1][digger.y].color : 0;
 	console.log(topColor,rightColor,bottomColor,leftColor);
+}
+function updateScore() {
+	document.getElementById("score").innerHTML = score; 
+}
+function restart() {
+	location.reload(); 
 }
