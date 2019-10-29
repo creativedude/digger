@@ -136,7 +136,7 @@ function findsupport(target){
 		console.log('support might be here');
 		if (target.y < rows - 2 && gameGrid[tarXLeft][target.y + 1].color != 0) {
 			console.log('supported')
-			supportstate = true;
+			return true;
 		} else {
 			tarXLeft--;
 		}
@@ -146,7 +146,7 @@ function findsupport(target){
 		console.log('support might be here');
 		if (target.y < rows - 2 && gameGrid[tarXRight][target.y + 1].color != 0) {
 			console.log('supported')
-			supportstate = true;
+			return true;
 		} else {
 			tarXRight++;
 		}
