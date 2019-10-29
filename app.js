@@ -88,7 +88,7 @@ function drawDigger() {
 	// check for falling and adjust
 	fill('#fff');
 	stroke('#bada55');
-	strokeWeight(2);
+	strokeWeight(1);
 	rect(digger.x * squaresize, digger.y * squaresize, squaresize, squaresize, 0);
 }
 function setup() {
@@ -136,7 +136,7 @@ function findsupport(target){
 		console.log('support might be here');
 		if (target.y < rows - 2 && gameGrid[tarXLeft][target.y + 1].color != 0) {
 			console.log('supported')
-			return true;
+			supportstate = true;
 		} else {
 			tarXLeft--;
 		}
@@ -144,9 +144,9 @@ function findsupport(target){
 
 	while (tarXRight < columns - 1 && gameGrid[tarXRight][target.y].color == target.color) {
 		console.log('support might be here');
-		if (target.y < rows -2 && gameGrid[tarXRight][target.y + 1].color != 0) {
+		if (target.y < rows - 2 && gameGrid[tarXRight][target.y + 1].color != 0) {
 			console.log('supported')
-			return true;
+			supportstate = true;
 		} else {
 			tarXRight++;
 		}
