@@ -1,6 +1,6 @@
 // app
 var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 60;
+var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 100;
 const colorArray = ['#ffffff','#0cce6b', '#dced31', '#ef2d56', '#ed7d3A', '#7d3Aed', '#ccc'];
 // const colorArray = ['white','green', 'red', 'blue', 'orange', 'yellow', 'grey'];
 
