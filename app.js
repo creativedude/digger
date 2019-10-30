@@ -162,6 +162,7 @@ function findsupport(target){
 	supportstate = false
 	tarXLeft = target.x - 1;
 	tarXRight = target.x + 1;
+	return false; // remove for supports
 	while (tarXLeft > 0 && gameGrid[tarXLeft][target.y].color == target.color) {
 		if (target.y < rows - 2 && gameGrid[tarXLeft][target.y + 1].color != 0) {
 			return true;
