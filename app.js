@@ -128,10 +128,10 @@ function checkDiggerFall() {
 	while (digger.y < rows - 1 && gameGrid[digger.x][digger.y + 1].color == 0) {
 		digger.y = digger.y + 1;
 	}
-	if (digger.y + 1 == rows) {
-		console.log("complete");
-		completedlevel = true;
-	}
+		if (digger.y + 1 == rows) {
+			console.log("complete");
+			completedlevel = true;
+		}
 };
 function checkBlockFall() {
 	let changed = 1;
