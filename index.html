@@ -7,6 +7,7 @@
     		body {
     			margin:0;
     			overflow:hidden;
+    			font-family:sans-serif;
     		}
     		/*#blockContainer {
     			border-top:1px solid #f00;
@@ -67,6 +68,45 @@
     			padding-right:10px;
     			line-height:30px;
     		}
+    		.lightbox {
+    			display:none;
+    			position:fixed;
+    			width:90vw;
+    			height:90vh;
+    			left:5vw;
+    			top:5vh;
+    			border-radius:20px;
+    			z-index:9999;
+				-webkit-box-shadow: 3px 3px 5px 0 rgba(0,0,0,0.3);
+				box-shadow: 3px 3px 5px 0 rgba(0,0,0,0.3);
+    			border:3px solid #dced31;
+    			background-color:#fff;		
+    			text-align:center;
+			    -webkit-flex-direction: column;
+			    -ms-flex-direction: column;
+			    flex-direction: column;	    
+    			flex-wrap: nowrap;
+			    -webkit-justify-content: center;
+			    -ms-flex-pack: center;
+			    justify-content: center;
+			    -webkit-align-content: stretch;
+			    -ms-flex-line-pack: stretch;
+			    align-content: stretch;
+			    -webkit-align-items: stretch;
+			    -ms-flex-align: stretch;
+			    align-items: stretch;
+    		}
+    		.open {
+    			display:flex;
+    		}
+    		.button {
+    			background-color:#ef2d56;
+    			display:block;
+    			margin: 0 auto;
+    			height:40px;
+    			line-height:40px;
+    			color:#fff;
+    		}
     	</style>
 	</head>
 	<body>
@@ -81,6 +121,12 @@
 			<button onclick="left()" class="left"><</button>
 			<button onclick="down()" class="down">dig</button>
 			<button onclick="right()" class="down">></button>
+		</div>
+		<div class="lightbox" id="win">
+			<h1>Congratulations!</h1>
+			<p>You have reached</p>
+			<h2>Level <span id="level"></span></h2>
+			<div class="button" onclick="closeLB()">Let's go!</div>
 		</div>
 	</body>
 	
