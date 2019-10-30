@@ -200,7 +200,7 @@ function findTargets(target) {
 				targets.splice(index, 1);
 	  			gameGrid[tarX][tarY].color = 0;
 	  			changedblocks.push(tarX);
-	  			score++;
+	  			score += (1 * targetfindcounter);
 	  			if (tarX < columns - 1 && gameGrid[tarX + 1][tarY].color == tarcolor && tarcolor != 0) {
 	  				targets.push(gameGrid[tarX + 1][tarY]);
 	  			}
