@@ -103,6 +103,7 @@ function complete() {
 	level++;
 	document.getElementById('win').classList.add("open");
 	document.getElementById('level').innerHTML = level;
+	document.getElementById('levelscore').innerHTML = score;
 	completedlevel=false;
 	digger = {
 		x: 0,
